@@ -1,4 +1,4 @@
   //config
   module.exports={
-    mongodb: 'mongodb://localhost/easyrn'
+    mongodb: 'mongodb://localhost/leo007'
   }

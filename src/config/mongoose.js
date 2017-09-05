@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const config = require('../config');
 const models = require('../models');
 
+const dbDB='mongodb://localhost/leo007'
 // 设置全局v8promise
-mongoose.Promise=global.Promise;
+mongoose.Promise=require('bluebird');
 
 // 开启debug
 mongoose.set('debug',true);
@@ -20,7 +21,7 @@ mongoose.connection.once('open', (callback) => {
 // 导出数据库
 const db = () => {
   for(item in models)
-  return mongoose.connect(config.mongodb, {
+  return mongoose.connect(dbDB, {
     useMongoClient: true
   });
 }

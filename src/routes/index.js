@@ -35,7 +35,16 @@ const controllers = require('../controllers');
 
 // test
 router.get('/test', controllers.mock.goods)
+router.get ('/a', async (ctx, next) => {
 
+    console.log (1111, ctx.request.query);
+    ctx.body = {
+        success: '200',
+        data: {
+            num: 'leoisok'
+        }
+    }
+})
 /* ***用户类****/
 // 用户登录
 router.post('/user/signIn', controllers.user.signIn)
